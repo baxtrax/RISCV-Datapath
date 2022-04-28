@@ -15,8 +15,8 @@ module RegisterNBit(Q,D,L,R);
 	
 	//Synchronous Logic Loop
 	always @(*) begin
-		if (R) Q <= 0;
-		else if (L) Q<= D;
-		else Q <= Q;
+		if (R) Q = 0;
+		else if (L) Q= D;
+		else Q = Q;
 	end
 endmodule

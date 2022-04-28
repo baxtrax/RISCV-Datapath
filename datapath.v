@@ -48,20 +48,35 @@ module datapath(rst, clk, instr, regRW, ALUsrc, immsrc, ALUop, status, mRW, wb, 
 	
 	alu32 u6(.a(inA), .b(inB_outmux), .opCode(ALUop), .out(toRAMadrs), .S(status));
 	
-	ram256x32 u7(.data_in(inB_inmux), .data_out(outRAM), .adrs(toRAMadrs), .cs(1'b0), .rw(mRW));
+	ram256x32 u7(.data_in(inB_inmux), .data_out(outRAM), .adrs(toRAMadrs[7:0]), .cs(1'b0), .rw(mRW));
 	
 	mux2x1 u8(.in1(outRAM), .in2(toRAMadrs), .out(final_out), .sl(wb));
 	
-	mux2x1 u9(.in1(pc4), .in2(pcbranch), .out(finalPCMUXout), .sl(pcsrc));
+	mux2x1x7b u9(.in1(pc4), .in2(pcbranch), .out(finalPCMUXout), .sl(pcsrc));
+	
+	always@(posedge clk) begin
+	$display("Final Out: ", finalPCMUXout);
+	$display("InstrMem: Adrs: %d, rd: %B, rs1: %d, rs2: %d", pc_out, rd, rs1, rs2);
+	$display("immGen: Instr: %d, out: %B, sl: %d", instr, inIMM_inmux, immsrc);
+	$display("ALU: A: %d, B: %B, OpCode: %d, Out: %d", inA, inB_outmux, ALUop, toRAMadrs[7:0]);
+	
+	end
 	
 
 endmodule
 
 module mux2x1(in1, in2, out, sl);
-parameter N = 32;
 input sl;
-input[N-1:0] in1, in2;
-output[N-1:0] out;
+input[31:0] in1, in2;
+output[31:0] out;
+
+assign out = sl ? in1 : in2;
+endmodule
+
+module mux2x1x7b(in1, in2, out, sl);
+input sl;
+input[6:0] in1, in2;
+output[6:0] out;
 
 assign out = sl ? in1 : in2;
 endmodule

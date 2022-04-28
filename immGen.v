@@ -10,7 +10,7 @@ module immGen(inInstr, outIMM, sl);
 	input [1:0] sl;
 	output reg [31:0] outIMM;
 	
-	always @(inInstr) begin
+	always @(*) begin
 		case(sl)
 			2'b00: begin
 				outIMM[11:0] = inInstr[31:20]; // I-Type
