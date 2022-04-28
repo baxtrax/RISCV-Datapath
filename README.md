@@ -5,7 +5,7 @@ Includes all components nessary to create a datapath for a RISC-V ish CPU. Does 
 ### The Top Level 0 Diagram
 A overview diagram of the Datapath Module and its inputs and outputs.
 
-![alt text](https://github.com/baxtrax/InstructionMemory/blob/main/Images/Lab7Lvl0.png?raw=true)
+![alt text](https://github.com/baxtrax/RISCV-Datapath/blob/main/Images/Datapath-Level0.png?raw=true)
 All of these inputs and outputs will be connected to a Control Unit that will control the CPU as needed for the specific instructions.
 
 ### The Top Level 1 Diagram
