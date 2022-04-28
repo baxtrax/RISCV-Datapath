@@ -11,7 +11,7 @@ All of these inputs and outputs will be connected to a Control Unit that will co
 
 ### The Top Level 1 Diagram
 More indepth view of the Inside of the Datapath Module. All of these components were designed in other repositorys on this account and added together with the proper connections to create this datapath.
-![alt text](https://github.com/baxtrax/InstructionMemory/blob/main/Images/Lab7Lvl1.png?raw=true)
+![alt text](https://github.com/baxtrax/RISCV-Datapath/blob/main/Images/Datapath-Level1.png?raw=true)
 
 ### Testbench and verification
 The Datapath Module is composed of one main file, datapath.v. This module has its own respective testbench to verify the code.
