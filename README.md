@@ -17,8 +17,14 @@ More indepth view of the Inside of the Datapath Module. All of these components 
 The Datapath Module is composed of one main file, datapath.v. This module has its own respective testbench to verify the code.
 
 #### Testing and Verification
-##### Testing Datapath Module
-![alt text](https://github.com/baxtrax/InstructionMemory/blob/main/Images/TopSim.png?raw=true)
+##### Testing Datapath Module (The instructions)
+Important to note that the instructions tested for the Datapath were only I type instruction. Other Instructions do work just would need to be programmed for due to a lack of a control unit.
+
+![alt text](https://github.com/baxtrax/RISCV-Datapath/blob/main/Images/Instr.png?raw=true)
+##### Testing Datapath Module (Loop 1)
+![alt text](https://github.com/baxtrax/RISCV-Datapath/blob/main/Images/Loop1.png?raw=true)
+##### Testing Datapath Module (Loop 2)
+![alt text](https://github.com/baxtrax/RISCV-Datapath/blob/main/Images/Loop2.png?raw=true)
 The datapath is composed of many parts and if needed, the file to test those parts was included.
 
 ## Running it
