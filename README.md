@@ -25,6 +25,7 @@ Important to note that the instructions tested for the Datapath were only I type
 ![alt text](https://github.com/baxtrax/RISCV-Datapath/blob/main/Images/Loop1.png?raw=true)
 ##### Testing Datapath Module (Loop 2)
 ![alt text](https://github.com/baxtrax/RISCV-Datapath/blob/main/Images/Loop2.png?raw=true)
+
 The datapath is composed of many parts and if needed, the file to test those parts was included.
 
 ## Running it
