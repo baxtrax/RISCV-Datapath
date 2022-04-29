@@ -4,6 +4,14 @@
  * Author: Bradley Gathers
  * Date: 3/3/2022
 */
+
+//ALUSRC
+// 0 is IMM value
+// 1 is B Value
+
+//WB
+// 0 Bypass RAM
+// 1 Result from RAM
 module datapath_tb();
 	//rst, clk, instr, regRW, ALUsrc, immsrc, ALUop, status, mRW, wb, pcsrc
 	// I/O and Parameters
@@ -43,15 +51,14 @@ module datapath_tb();
 		mRW = 1'b0;
 		wb = 1'b1;
 		pcsrc = 1'b0;
+		
+		immsrc = 1'b0;
+		ALUsrc = 1'b0;
+		ALUop = 5'b00000;
+		wb = 1'b0;  
 		rst = 1'b1;
 		#10;
-		rst = 1'b0;
-		//addi
-		immsrc = 1'b0;
-		ALUsrc = 1'b1;
-		ALUop = 5'b00000;
-		wb = 1'b1;   
-		
+		rst = 1'b0;		
 		
 		#100 $stop;
 	end

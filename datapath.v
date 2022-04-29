@@ -18,7 +18,6 @@ module datapath(rst, clk, instr, regRW, ALUsrc, immsrc, ALUop, status, mRW, wb, 
 	
 	// To Register File
 	wire [4:0] rd, rs1, rs2;
-	wire [11:0] imm;
 	wire [31:0] final_out;
 	
 	//ALUsrc MUX
@@ -55,11 +54,34 @@ module datapath(rst, clk, instr, regRW, ALUsrc, immsrc, ALUop, status, mRW, wb, 
 	mux2x1x7b u9(.in1(pc4), .in2(pcbranch), .out(finalPCMUXout), .sl(pcsrc));
 	
 	always@(posedge clk) begin
-	$display("Final Out: ", finalPCMUXout);
-	$display("InstrMem: Adrs: %d, rd: %B, rs1: %d, rs2: %d", pc_out, rd, rs1, rs2);
-	$display("immGen: Instr: %d, out: %B, sl: %d", instr, inIMM_inmux, immsrc);
-	$display("ALU: A: %d, B: %B, OpCode: %d, Out: %d", inA, inB_outmux, ALUop, toRAMadrs[7:0]);
 	
+	$display("====LOOP=============================");
+	$display("====PROGRAM COUNTER====");
+	$display("pc_out: %b", pc_out);
+	$display("pc4: %b", pc4);
+	$display("pcbranch: %b", pcbranch);
+	$display("finalPCMUXout: %b", finalPCMUXout);
+	
+	$display("====IMM Gen====");
+	$display("inIMM_inmux: %b", inIMM_inmux);
+	
+	$display("====REGISTER FILE====");
+	$display("rd: %b", rd);
+	$display("rs1: %b", rs1);
+	$display("rs2: %b", rs2);
+	$display("inA: %b", inA);
+	$display("inB_inmux: %b", inB_inmux);
+	$display("final_out: %b", final_out);
+	
+	$display("====ALU====");
+	$display("inA: %b", inA);
+	$display("inB_outmux: %b", inB_outmux);
+	$display("toRAMadrs: %b", toRAMadrs);
+	
+	$display("====RAM====");
+	$display("toRAMadrs: %b", toRAMadrs);
+	$display("outRAM: %b", outRAM);
+	$display("=====================================");
 	end
 	
 

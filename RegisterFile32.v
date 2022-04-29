@@ -87,7 +87,7 @@ module RegisterFile32(dataIn, dataA, dataB, rs1, rs2, rd, r, writeEn);
 	
 	//Registers to Mux
 	mux32x1 muxA (.sl(rs1),
-					.in0(reg_out_0),  .in1(reg_out_1),  .in2(reg_out_2),  .in3(reg_out_3), 
+					.in0(32'h00000000),  .in1(reg_out_1),  .in2(reg_out_2),  .in3(reg_out_3), 
 					.in4(reg_out_4),  .in5(reg_out_5),  .in6(reg_out_6),  .in7(reg_out_7), 
 					.in8(reg_out_8),  .in9(reg_out_9),  .in10(reg_out_10), .in11(reg_out_11), 
 					.in12(reg_out_12), .in13(reg_out_13), .in14(reg_out_14), .in15(reg_out_15),
@@ -98,7 +98,7 @@ module RegisterFile32(dataIn, dataA, dataB, rs1, rs2, rd, r, writeEn);
 					.out(dataA));
 					
 	mux32x1 muxB (.sl(rs2),
-					.in0(reg_out_0),  .in1(reg_out_1),  .in2(reg_out_2),  .in3(reg_out_3), 
+					.in0(32'h00000000),  .in1(reg_out_1),  .in2(reg_out_2),  .in3(reg_out_3), 
 					.in4(reg_out_4),  .in5(reg_out_5),  .in6(reg_out_6),  .in7(reg_out_7), 
 					.in8(reg_out_8),  .in9(reg_out_9),  .in10(reg_out_10), .in11(reg_out_11), 
 					.in12(reg_out_12), .in13(reg_out_13), .in14(reg_out_14), .in15(reg_out_15),
